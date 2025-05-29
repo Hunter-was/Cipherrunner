@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    h1 { text-align: center; }
+    input, button, select { padding: 8px; margin: 5px 0; width: 100%; }
+    .task { border-bottom: 1px solid #ccc; padding: 10px 0; }
+    .task:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+  <h1>Task Manager</h1>
+
+  <label>Username:</label>
+  <input type="text" id="username" placeholder="Enter username" />
+  <button onclick="setUser()">Set User</button>
+
+  <hr/>
+
+  <label>New Task:</label>
+  <input type="text" id="taskName" placeholder="Task name" />
+  <label>Due Date:</label>
+  <input type="date" id="dueDate" />
+  <button onclick="addTask()">Add Task</button>
+
+  <h2>To-Do List</h2>
+  <div id="taskList"></div>
+
+  <script>
+    let currentUser = '';
+    let users = JSON.parse(localStorage.getItem('taskData')) || {};
+
+    function setUser() {
+      const name = document.getElementById('username').value.trim();
+      if (!name) return alert("Please enter a username.");
+      currentUser = name;
+      if (!users[currentUser]) users[currentUser] = { tasks: [] };
+      saveData();
+      displayTasks();
+    }
+
+    function saveData() {
+      localStorage.setItem('taskData', JSON.stringify(users));
+    }
+
+    function addTask() {
+      if (!currentUser) return alert("Please set a user first.");
+      const name = document.getElementById('taskName').value.trim();
+      const dueDate = document.getElementById('dueDate').value;
+      if (!name || !dueDate) return alert("Task name and due date required.");
+      users[currentUser].tasks.push({ name, dueDate });
+      saveData();
+      displayTasks();
+      document.getElementById('taskName').value = '';
+      document.getElementById('dueDate').value = '';
+    }
+
+    function deleteTask(index) {
+      users[currentUser].tasks.splice(index, 1);
+      saveData();
+      displayTasks();
+    }
+
+    function displayTasks() {
+      const taskList = document.getElementById('taskList');
+      taskList.innerHTML = '';
+      if (!currentUser || !users[currentUser]) return;
+
+      users[currentUser].tasks
+        .sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate))
+        .forEach((task, i) => {
+          const taskEl = document.createElement('div');
+          taskEl.className = 'task';
+          taskEl.innerHTML = `
+            <strong>${task.name}</strong><br/>
+            Due: ${new Date(task.dueDate).toLocaleDateString()}<br/>
+            <button onclick="deleteTask(${i})">Delete</button>
+          `;
+          taskList.appendChild(taskEl);
+        });
+    }
+
+    window.onload = () => {
+      if (currentUser) displayTasks();
+    };
+  </script>
+</body>
+</html>
