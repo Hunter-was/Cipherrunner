@@ -1,1 +1,8 @@
+underneath the
+          "break;" line, input this code:
 
+ case "CODEHERE":
+          window.location.href = "LINKHERE";
+          break;
+Then fill in "CODEHERE" with the code you want to redirect to the link.
+Then fill in "LINKHERE" with the link you want to be redirected to.
