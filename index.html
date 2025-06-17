@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Cipher Redirect</title>
   <style>
     body {
@@ -73,13 +73,8 @@
     }
 
     function stopAllExcept(exceptId) {
-      const audioIds = [
-        "pigstep-audio",
-        "chirp-audio",
-        "mellohi-audio",
-        "jukebox-audio"
-      ];
-      audioIds.forEach((id) => {
+      const audioIds = ["pigstep-audio", "chirp-audio", "mellohi-audio"];
+      audioIds.forEach(id => {
         if (id !== exceptId) {
           const audio = document.getElementById(id);
           if (!audio.paused) {
@@ -105,11 +100,6 @@
       document.getElementById("mellohi-audio").play();
     }
 
-    function playJukebox() {
-      stopAllExcept("jukebox-audio");
-      document.getElementById("jukebox-audio").play();
-    }
-
     window.onload = () => {
       setTimeout(() => {
         runCipherPrompt();
@@ -119,20 +109,31 @@
 </head>
 <body>
   <!-- Top-right logo -->
-  <img
-    src="Discord Emoji and Sticker Meme Square (5).png"
-    alt="Cipher Redirect Logo"
-    class="top-right-image"
-  />
+  <img src="Discord Emoji and Sticker Meme Square (5).png" alt="Cipher Redirect Logo" class="top-right-image">
 
   <!-- Re-prompt image -->
-  <img
-    src="RunKeyButton.png.png"
-    alt="Run Key"
-    class="run-key-image"
-    onclick="runCipherPrompt()"
-  />
+  <img src="RunKeyButton.png.png" alt="Run Key" class="run-key-image" onclick="runCipherPrompt()">
 
   <!-- Help text -->
   <p class="help-text">
-    If a prompt does not a
+    If a prompt does not appear above, <a href="https://www.youtube.com" target="_blank">click here for help.</a>
+  </p>
+
+  <!-- Main content -->
+  <h1>Redirection -</h1>
+  <p>If you're not redirected, make sure JavaScript is enabled.</p>
+  <p>- Hunter W.</p>
+
+  <!-- Bottom-left container holding all three clickable images -->
+  <div class="bottom-left-container">
+    <img src="Pigstepdisc.png" alt="Play Pigstep" onclick="playPigstep()">
+    <img src="Chirpdisc.png" alt="Play Chirp" onclick="playChirp()">
+    <img src="Mellohidisc.png" alt="Play Mellohi" onclick="playMellohi()">
+  </div>
+
+  <!-- Hidden audio elements -->
+  <audio id="pigstep-audio" src="4 - Pigstep (Mono Mix).mp3"></audio>
+  <audio id="chirp-audio" src="2-20. Chirp.mp3"></audio>
+  <audio id="mellohi-audio" src="2-22. Mellohi.mp3"></audio>
+</body>
+</html>
