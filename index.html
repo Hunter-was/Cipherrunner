@@ -8,57 +8,60 @@
       margin: 0;
       padding: 0;
       font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
     }
 
     .top-right-image {
       position: absolute;
       top: 20px;
       right: 20px;
-      width: 200px; /* Adjust size as needed */
+      width: 200px;
       height: auto;
     }
 
-    h1 {
-      margin-top: 250px; /* Pushes text down if needed */
-      text-align: center;
-    }
-
-    p {
-      text-align: center;
+    .help-text {
+      margin-bottom: 20px;
     }
   </style>
   <script>
-    function checkCipher() {
-      const input = prompt("Cipher:").toLowerCase(); // Convert input to lowercase
+    window.onload = () => {
+      // Delay prompt to allow page content to render
+      setTimeout(() => {
+        const input = prompt("Cipher:")?.toLowerCase();
 
-      switch (input) {
-        case "yt":
-          window.location.href = "https://youtube.com";
-          break;
-        case "tw":
-          window.location.href = "https://www.twitch.tv";
-          break;
-        case "?help?":
-          window.location.href = "https://hunter-was.github.io/Redirect.help/";
-          break;
-        default:
-          alert("Invalid Code: Reload Site And Try Again; or input ?help?");
-      }
-    }
-
-    window.onload = checkCipher;
+        switch (input) {
+          case "yt":
+            window.location.href = "https://youtube.com";
+            break;
+          case "tw":
+            window.location.href = "https://www.twitch.tv";
+            break;
+          case "?help?":
+            window.location.href = "https://hunter-was.github.io/Redirect.help/";
+            break;
+          default:
+            if (input) {
+              alert("Invalid Code: Reload Site And Try Again; or input ?help?");
+            }
+        }
+      }, 100); // Short delay allows background to appear first
+    };
   </script>
 </head>
 <body>
-  <!-- Image in top-right corner -->
   <img src="Discord Emoji and Sticker Meme Square (5).png" alt="Cipher Redirect Logo" class="top-right-image">
 
-  <p style="text-align: center; margin-top: 220px;">
+  <p class="help-text">
     If a prompt does not appear here, <a href="https://www.youtube.com" target="_blank">click here for help.</a>
   </p>
 
   <h1>Redirection -</h1>
   <p>If you're not redirected, please enable JavaScript.</p>
-  <p>                                              - Hunter W.</p>
+  <p>- Hunter W.</p>
 </body>
 </html>
