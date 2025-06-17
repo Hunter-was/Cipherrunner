@@ -37,7 +37,7 @@
       bottom: 20px;
       left: 20px;
       display: flex;
-      gap: 15px; /* space between the two images */
+      gap: 15px; /* space between the images */
       align-items: center;
     }
 
@@ -72,30 +72,32 @@
       }
     }
 
+    function stopAllExcept(exceptId) {
+      const audioIds = ["pigstep-audio", "chirp-audio", "mellohi-audio"];
+      audioIds.forEach(id => {
+        if (id !== exceptId) {
+          const audio = document.getElementById(id);
+          if (!audio.paused) {
+            audio.pause();
+            audio.currentTime = 0;
+          }
+        }
+      });
+    }
+
     function playPigstep() {
-      const pigstepAudio = document.getElementById("pigstep-audio");
-      const chirpAudio = document.getElementById("chirp-audio");
-
-      // Stop chirp audio if playing
-      if (!chirpAudio.paused) {
-        chirpAudio.pause();
-        chirpAudio.currentTime = 0;
-      }
-
-      pigstepAudio.play();
+      stopAllExcept("pigstep-audio");
+      document.getElementById("pigstep-audio").play();
     }
 
     function playChirp() {
-      const pigstepAudio = document.getElementById("pigstep-audio");
-      const chirpAudio = document.getElementById("chirp-audio");
+      stopAllExcept("chirp-audio");
+      document.getElementById("chirp-audio").play();
+    }
 
-      // Stop pigstep audio if playing
-      if (!pigstepAudio.paused) {
-        pigstepAudio.pause();
-        pigstepAudio.currentTime = 0;
-      }
-
-      chirpAudio.play();
+    function playMellohi() {
+      stopAllExcept("mellohi-audio");
+      document.getElementById("mellohi-audio").play();
     }
 
     window.onload = () => {
@@ -122,14 +124,17 @@
   <p>If you're not redirected, make sure JavaScript is enabled.</p>
   <p>- Hunter W.</p>
 
-  <!-- Bottom-left container holding both clickable images -->
+  <!-- Bottom-left container holding all three clickable images -->
   <div class="bottom-left-container">
     <img src="Pigstepdisc.png" alt="Play Pigstep" onclick="playPigstep()">
     <img src="Chirpdisc.png" alt="Play Chirp" onclick="playChirp()">
+    <img src="Mellohidisc.png" alt="Play Mellohi" onclick="playMellohi()">
   </div>
 
   <!-- Hidden audio elements -->
   <audio id="pigstep-audio" src="4 - Pigstep (Mono Mix).mp3"></audio>
   <audio id="chirp-audio" src="2-20. Chirp.mp3"></audio>
+  <audio id="mellohi-audio" src="2-22. Mellohi.mp3"></audio>
 </body>
 </html>
+
