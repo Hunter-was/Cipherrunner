@@ -73,13 +73,29 @@
     }
 
     function playPigstep() {
-      const audio = document.getElementById("pigstep-audio");
-      audio.play();
+      const pigstepAudio = document.getElementById("pigstep-audio");
+      const chirpAudio = document.getElementById("chirp-audio");
+
+      // Stop chirp audio if playing
+      if (!chirpAudio.paused) {
+        chirpAudio.pause();
+        chirpAudio.currentTime = 0;
+      }
+
+      pigstepAudio.play();
     }
 
     function playChirp() {
-      const audio = document.getElementById("chirp-audio");
-      audio.play();
+      const pigstepAudio = document.getElementById("pigstep-audio");
+      const chirpAudio = document.getElementById("chirp-audio");
+
+      // Stop pigstep audio if playing
+      if (!pigstepAudio.paused) {
+        pigstepAudio.pause();
+        pigstepAudio.currentTime = 0;
+      }
+
+      chirpAudio.play();
     }
 
     window.onload = () => {
