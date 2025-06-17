@@ -3,6 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Cipher Redirect</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    .top-right-image {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 200px; /* Adjust size as needed */
+      height: auto;
+    }
+
+    h1 {
+      margin-top: 250px; /* Pushes text down if needed */
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+  </style>
   <script>
     function checkCipher() {
       const input = prompt("Cipher:").toLowerCase(); // Convert input to lowercase
@@ -15,7 +39,7 @@
           window.location.href = "https://www.twitch.tv";
           break;
         case "?help?":
-          window.location.href = "HELP";
+          window.location.href = "https://hunter-was.github.io/Redirect.help/";
           break;
         default:
           alert("Invalid Code: Reload Site And Try Again; or input ?help?");
@@ -26,6 +50,9 @@
   </script>
 </head>
 <body>
+  <!-- Image in top-right corner -->
+  <img src="Discord Emoji and Sticker Meme Square (5).png" alt="Cipher Redirect Logo" class="top-right-image">
+
   <h1>Redirection -</h1>
   <p>If you're not redirected, please enable JavaScript.</p>
   <p>                                              - Hunter W.</p>
