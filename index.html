@@ -6,6 +6,7 @@
   <script>
     function checkCipher() {
       const input = prompt("Cipher:");
+
       switch (input) {
         case "yt":
           window.location.href = "https://youtube.com";
@@ -13,11 +14,36 @@
         case "twitch":
           window.location.href = "https://www.twitch.tv";
           break;
-           case "SuperScketchyWebsiteDotCom":
+        case "SuperScketchyWebsiteDotCom":
           window.location.href = "https://www.twitch.tv";
+          break;
+        case "psave/":
+          saveCustomCode();
+          break;
+        case "ssave":
+          displaySavedCode();
           break;
         default:
           alert("Invalid Code: Reload Site And Try Again; or input ?help?");
+      }
+    }
+
+    function saveCustomCode() {
+      const customCode = prompt("Enter the custom code you want to save:");
+      if (customCode) {
+        localStorage.setItem("savedCode", customCode);
+        alert(`Custom code "${customCode}" saved successfully!`);
+      } else {
+        alert("No code entered. Nothing saved.");
+      }
+    }
+
+    function displaySavedCode() {
+      const savedCode = localStorage.getItem("savedCode");
+      if (savedCode) {
+        alert(`Your saved custom code is: "${savedCode}"`);
+      } else {
+        alert("No saved code found.");
       }
     }
 
@@ -25,8 +51,8 @@
   </script>
 </head>
 <body>
-<h1>Redirection -</h1>
+  <h1>Redirection -</h1>
   <p>If you're not redirected, please enable JavaScript.</p>
-  <p>                                              - Hunter W.</p>
+  <p>- Hunter W.</p>
 </body>
 </html>
