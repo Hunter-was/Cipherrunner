@@ -24,44 +24,61 @@
       height: auto;
     }
 
+    .run-key-image {
+      width: 150px;
+      height: auto;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
     .help-text {
       margin-bottom: 20px;
     }
   </style>
   <script>
-    window.onload = () => {
-      // Delay prompt to allow page content to render
-      setTimeout(() => {
-        const input = prompt("Cipher Key:")?.toLowerCase();
+    function runCipherPrompt() {
+      const input = prompt("Cipher Key:")?.toLowerCase();
 
-        switch (input) {
-          case "yt":
-            window.location.href = "https://youtube.com";
-            break;
-          case "tw":
-            window.location.href = "https://www.twitch.tv";
-            break;
-          case "?help?":
-            window.location.href = "https://hunter-was.github.io/Redirect.help/";
-            break;
-          default:
-            if (input) {
-              alert("Invalid Code: Reload Site And Try Again; or input ?help?");
-            }
-        }
-      }, 100); // Short delay allows background to appear first
+      switch (input) {
+        case "yt":
+          window.location.href = "https://youtube.com";
+          break;
+        case "tw":
+          window.location.href = "https://www.twitch.tv";
+          break;
+        case "?help?":
+          window.location.href = "https://hunter-was.github.io/Redirect.help/";
+          break;
+        default:
+          if (input) {
+            alert("Invalid Code: Reload Site And Try Again; or input ?help?");
+          }
+      }
+    }
+
+    window.onload = () => {
+      // Short delay so page displays first
+      setTimeout(() => {
+        runCipherPrompt();
+      }, 100);
     };
   </script>
 </head>
 <body>
+  <!-- Top-right logo -->
   <img src="Discord Emoji and Sticker Meme Square (5).png" alt="Cipher Redirect Logo" class="top-right-image">
 
+  <!-- Re-prompt image -->
+  <img src="RunKeyButton.png.png" alt="Run Key" class="run-key-image" onclick="runCipherPrompt()">
+
+  <!-- Help text -->
   <p class="help-text">
-    If a prompt does not appear here, <a href="https://www.youtube.com" target="_blank">click here for help.</a>
+    <a href="https://www.youtube.com" target="_blank">If a prompt does not appear above, click here for help.</a>
   </p>
 
+  <!-- Main content -->
   <h1>Redirection -</h1>
-  <p>If you're not redirected, please enable JavaScript.</p>
+  <p>If you're not redirected, make sure JavaScript is enabled.</p>
   <p>- Hunter W.</p>
 </body>
 </html>
