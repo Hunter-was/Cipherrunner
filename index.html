@@ -56,20 +56,21 @@
       const input = prompt("Cipher Key:")?.toLowerCase();
 
       switch (input) {
-        case "yt":
-          window.location.href = "https://youtube.com";
-          break;
-        case "tw":
-          window.location.href = "https://www.twitch.tv";
-          break;
-        case "?help?":
-          window.location.href = "https://hunter-was.github.io/Redirect.help/";
-          break;
-        default:
-          if (input) {
-            alert("Invalid Code: Reload Site And Try Again; or input ?help?");
-          }
-      }
+  case "yt":
+    window.open("https://youtube.com", "_blank");
+    break;
+  case "tw":
+    window.open("https://www.twitch.tv", "_blank");
+    break;
+  case "?help?":
+    window.open("https://hunter-was.github.io/Redirect.help/", "_blank");
+    break;
+  default:
+    if (input) {
+      alert("Invalid Code: Reload Site And Try Again; or input ?help?");
+    }
+}
+
     }
 
     function stopAllExcept(exceptId) {
