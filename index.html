@@ -14,6 +14,7 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
+      position: relative; /* for absolute positioning */
     }
 
     .top-right-image {
@@ -31,10 +32,16 @@
       margin-bottom: 10px;
     }
 
-    .pigstep-image {
+    .bottom-left-container {
       position: absolute;
       bottom: 20px;
       left: 20px;
+      display: flex;
+      gap: 15px; /* space between the two images */
+      align-items: center;
+    }
+
+    .bottom-left-container img {
       width: 60px;
       height: auto;
       cursor: pointer;
@@ -70,8 +77,12 @@
       audio.play();
     }
 
+    function playChirp() {
+      const audio = document.getElementById("chirp-audio");
+      audio.play();
+    }
+
     window.onload = () => {
-      // Short delay so page displays first
       setTimeout(() => {
         runCipherPrompt();
       }, 100);
@@ -95,10 +106,14 @@
   <p>If you're not redirected, make sure JavaScript is enabled.</p>
   <p>- Hunter W.</p>
 
-  <!-- Bottom-left clickable image for Pigstep -->
-  <img src="Pigstepdisc.png" alt="Play Pigstep" class="pigstep-image" onclick="playPigstep()">
+  <!-- Bottom-left container holding both clickable images -->
+  <div class="bottom-left-container">
+    <img src="Pigstepdisc.png" alt="Play Pigstep" onclick="playPigstep()">
+    <img src="Chirpdisc.png" alt="Play Chirp" onclick="playChirp()">
+  </div>
 
-  <!-- Hidden audio element -->
+  <!-- Hidden audio elements -->
   <audio id="pigstep-audio" src="4 - Pigstep (Mono Mix).mp3"></audio>
+  <audio id="chirp-audio" src="2-20. Chirp.mp3"></audio>
 </body>
 </html>
