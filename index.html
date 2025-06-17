@@ -31,6 +31,15 @@
       margin-bottom: 10px;
     }
 
+    .pigstep-image {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: 60px;
+      height: auto;
+      cursor: pointer;
+    }
+
     .help-text {
       margin-bottom: 20px;
     }
@@ -54,6 +63,11 @@
             alert("Invalid Code: Reload Site And Try Again; or input ?help?");
           }
       }
+    }
+
+    function playPigstep() {
+      const audio = document.getElementById("pigstep-audio");
+      audio.play();
     }
 
     window.onload = () => {
@@ -80,5 +94,11 @@
   <h1>Redirection -</h1>
   <p>If you're not redirected, make sure JavaScript is enabled.</p>
   <p>- Hunter W.</p>
+
+  <!-- Bottom-left clickable image for Pigstep -->
+  <img src="Pigstepdisc.png" alt="Play Pigstep" class="pigstep-image" onclick="playPigstep()">
+
+  <!-- Hidden audio element -->
+  <audio id="pigstep-audio" src="4 - Pigstep (Mono Mix).mp3"></audio>
 </body>
 </html>
