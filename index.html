@@ -100,6 +100,17 @@
       document.getElementById("mellohi-audio").play();
     }
 
+    function muteAllSounds() {
+      const audioIds = ["pigstep-audio", "chirp-audio", "mellohi-audio"];
+      audioIds.forEach(id => {
+        const audio = document.getElementById(id);
+        if (!audio.paused) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+    }
+
     window.onload = () => {
       setTimeout(() => {
         runCipherPrompt();
@@ -124,11 +135,12 @@
   <p>If you're not redirected, make sure JavaScript is enabled.</p>
   <p>- Hunter W.</p>
 
-  <!-- Bottom-left container holding all three clickable images -->
+  <!-- Bottom-left container holding all four clickable images -->
   <div class="bottom-left-container">
     <img src="Pigstepdisc.png" alt="Play Pigstep" onclick="playPigstep()">
     <img src="Chirpdisc.png" alt="Play Chirp" onclick="playChirp()">
     <img src="Mellohidisc.png" alt="Play Mellohi" onclick="playMellohi()">
+    <img src="Jukebox.png" alt="Mute All Sounds" onclick="muteAllSounds()">
   </div>
 
   <!-- Hidden audio elements -->
