@@ -15,8 +15,9 @@
       height: 100vh;
       text-align: center;
       position: relative; /* for absolute positioning */
-      background-image: url('halloween');
-      background-color: #ff4000;
+      background-image: url('halloween'); /* optional background */
+      background-color: #000; /* dark background to make text pop */
+      color: #ff4000; /* makes all text orange */
     }
 
     .top-right-image {
@@ -52,54 +53,62 @@
     .help-text {
       margin-bottom: 20px;
     }
+
+    a {
+      color: #ffaa00; /* makes links slightly lighter orange */
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #fff;
+    }
   </style>
   <script>
     function runCipherPrompt() {
       const input = prompt("Cipher Key:")?.toLowerCase();
 
       switch (input) {
-  case "scketchy":
-    window.open("https://hunterwas.my.canva.site/superscketchywebsitedotcom", "_blank");
-    break;
-  case "actual":
-    window.open("https://drive.google.com/drive/folders/1Cq2V_dgXu8YHxQlKtZBWqXIcWZElxLN3?usp=sharing", "_blank");
-    break;
-  case "?help?":
-    window.open("https://hunter-was.github.io/Redirect.help/", "_blank");
-    break;
-  case "sketchy":
-    window.open("https://supersketchywebsite.com", "_blank");
-    break;
-  case "tuff":
-    window.open("https://www.youtube.com/@Tuffvids67", "_blank");
-    break;
-  case "sauce":
-    window.open("https://www.youtube.com/@firesauce67", "_blank");
-    break;
-  case "clever":
-    window.open("https://clever.com/in/smusd/student/portal", "_blank");
-    break;
-  case "fortalis":
-    window.open("https://fortalisofficial.wixsite.com/site", "_blank");
-    break;
-  case "frp":
-    window.open("https://sites.google.com/view/frpofficialplay?usp=sharing", "_blank");
-    break;
-  case "inflection":
-    window.open("https://inflectionmagazine.com", "_blank");
-    break;
-  case "Trophy":
-    window.open("https://github.com/Hunter-was/Trophy", "_blank");
-    break;
-  case "projectx":
-    window.open("https://www.twitch.tv/ze11an", "_blank");
-    break;
-  default:
-    if (input) {
-      alert("Invalid Code: Reload Site And Try Again; or input ?help?");
-    }
-}
-
+        case "scketchy":
+          window.open("https://hunterwas.my.canva.site/superscketchywebsitedotcom", "_blank");
+          break;
+        case "actual":
+          window.open("https://drive.google.com/drive/folders/1Cq2V_dgXu8YHxQlKtZBWqXIcWZElxLN3?usp=sharing", "_blank");
+          break;
+        case "?help?":
+          window.open("https://hunter-was.github.io/Redirect.help/", "_blank");
+          break;
+        case "sketchy":
+          window.open("https://supersketchywebsite.com", "_blank");
+          break;
+        case "tuff":
+          window.open("https://www.youtube.com/@Tuffvids67", "_blank");
+          break;
+        case "sauce":
+          window.open("https://www.youtube.com/@firesauce67", "_blank");
+          break;
+        case "clever":
+          window.open("https://clever.com/in/smusd/student/portal", "_blank");
+          break;
+        case "fortalis":
+          window.open("https://fortalisofficial.wixsite.com/site", "_blank");
+          break;
+        case "frp":
+          window.open("https://sites.google.com/view/frpofficialplay?usp=sharing", "_blank");
+          break;
+        case "inflection":
+          window.open("https://inflectionmagazine.com", "_blank");
+          break;
+        case "trophy":
+          window.open("https://github.com/Hunter-was/Trophy", "_blank");
+          break;
+        case "projectx":
+          window.open("https://www.twitch.tv/ze11an", "_blank");
+          break;
+        default:
+          if (input) {
+            alert("Invalid Code: Reload Site And Try Again; or input ?help?");
+          }
+      }
     }
 
     function stopAllExcept(exceptId) {
