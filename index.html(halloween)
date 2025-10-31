@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cipher Redirect</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      position: relative; /* for absolute positioning */
+    }
+
+    .top-right-image {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 200px;
+      height: auto;
+    }
+
+    .run-key-image {
+      width: 150px;
+      height: auto;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .bottom-left-container {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      gap: 15px; /* space between the images */
+      align-items: center;
+    }
+
+    .bottom-left-container img {
+      width: 60px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .help-text {
+      margin-bottom: 20px;
+    }
+  </style>
+  <script>
+    function runCipherPrompt() {
+      const input = prompt("Cipher Key:")?.toLowerCase();
+
+      switch (input) {
+  case "scketchy":
+    window.open("https://hunterwas.my.canva.site/superscketchywebsitedotcom", "_blank");
+    break;
+  case "actual":
+    window.open("https://drive.google.com/drive/folders/1Cq2V_dgXu8YHxQlKtZBWqXIcWZElxLN3?usp=sharing", "_blank");
+    break;
+  case "?help?":
+    window.open("https://hunter-was.github.io/Redirect.help/", "_blank");
+    break;
+  case "sketchy":
+    window.open("https://supersketchywebsite.com", "_blank");
+    break;
+  case "tuff":
+    window.open("https://www.youtube.com/@Tuffvids67", "_blank");
+    break;
+  case "sauce":
+    window.open("https://www.youtube.com/@firesauce67", "_blank");
+    break;
+  case "clever":
+    window.open("https://clever.com/in/smusd/student/portal", "_blank");
+    break;
+  case "fortalis":
+    window.open("https://fortalisofficial.wixsite.com/site", "_blank");
+    break;
+  case "frp":
+    window.open("https://sites.google.com/view/frpofficialplay?usp=sharing", "_blank");
+    break;
+  case "inflection":
+    window.open("https://inflectionmagazine.com", "_blank");
+    break;
+  case "Trophy":
+    window.open("https://github.com/Hunter-was/Trophy", "_blank");
+    break;
+  case "projectx":
+    window.open("https://www.twitch.tv/ze11an", "_blank");
+    break;
+  default:
+    if (input) {
+      alert("Invalid Code: Reload Site And Try Again; or input ?help?");
+    }
+}
+
+    }
+
+    function stopAllExcept(exceptId) {
+      const audioIds = ["pigstep-audio", "chirp-audio", "mellohi-audio"];
+      audioIds.forEach(id => {
+        if (id !== exceptId) {
+          const audio = document.getElementById(id);
+          if (!audio.paused) {
+            audio.pause();
+            audio.currentTime = 0;
+          }
+        }
+      });
+    }
+
+    function playPigstep() {
+      stopAllExcept("pigstep-audio");
+      document.getElementById("pigstep-audio").play();
+    }
+
+    function playChirp() {
+      stopAllExcept("chirp-audio");
+      document.getElementById("chirp-audio").play();
+    }
+
+    function playMellohi() {
+      stopAllExcept("mellohi-audio");
+      document.getElementById("mellohi-audio").play();
+    }
+
+    function muteAllSounds() {
+      const audioIds = ["pigstep-audio", "chirp-audio", "mellohi-audio"];
+      audioIds.forEach(id => {
+        const audio = document.getElementById(id);
+        if (!audio.paused) {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+      });
+    }
+
+    window.onload = () => {
+      setTimeout(() => {
+        runCipherPrompt();
+      }, 100);
+    };
+  </script>
+</head>
+<body>
+  <!-- Top-right logo -->
+  <img src="Discord Emoji and Sticker Meme Square (5).png" alt="Cipher Redirect Logo" class="top-right-image">
+
+  <!-- Re-prompt image -->
+  <img src="RunKeyButton.png.png" alt="Run Key" class="run-key-image" onclick="runCipherPrompt()">
+
+  <!-- Help text -->
+  <p class="help-text">
+    If a prompt does not appear above, <a href="https://hunter-was.github.io/Redirect.help/" target="_blank">click here for help.</a>
+  </p>
+
+  <!-- Main content -->
+  <h1>Happy Halloween!</h1>
+  <p>If you're not redirected, make sure JavaScript is enabled.</p>
+  <p>- Hunter W.</p>
+
+  <!-- Bottom-left container holding all four clickable images -->
+  <div class="bottom-left-container">
+    <img src="Pigstepdisc.png" alt="Play Pigstep" onclick="playPigstep()">
+    <img src="Chirpdisc.png" alt="Play Chirp" onclick="playChirp()">
+    <img src="Mellohidisc.png" alt="Play Mellohi" onclick="playMellohi()">
+    <img src="Jukebox.png" alt="Mute All Sounds" onclick="muteAllSounds()">
+  </div>
+
+  <!-- Hidden audio elements -->
+  <audio id="pigstep-audio" src="4 - Pigstep (Mono Mix).mp3"></audio>
+  <audio id="chirp-audio" src="2-20. Chirp.mp3"></audio>
+  <audio id="mellohi-audio" src="2-22. Mellohi.mp3"></audio>
+</body>
+</html>
