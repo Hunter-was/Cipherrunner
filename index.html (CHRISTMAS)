@@ -70,44 +70,8 @@
         case "scketchy":
           window.open("https://hunterwas.my.canva.site/superscketchywebsitedotcom", "_blank");
           break;
-        case "actual":
-          window.open("https://drive.google.com/drive/folders/1Cq2V_dgXu8YHxQlKtZBWqXIcWZElxLN3?usp=sharing", "_blank");
-          break;
         case "?help?":
           window.open("https://hunter-was.github.io/Redirect.help/", "_blank");
-          break;
-        case "sketchy":
-          window.open("https://supersketchywebsite.com", "_blank");
-          break;
-        case "tuff":
-          window.open("https://www.youtube.com/@Tuffvids67", "_blank");
-          break;
-        case "sauce":
-          window.open("https://www.youtube.com/@firesauce67", "_blank");
-          break;
-        case "clever":
-          window.open("https://clever.com/in/smusd/student/portal", "_blank");
-          break;
-        case "fortalis":
-          window.open("https://fortalisofficial.wixsite.com/site", "_blank");
-          break;
-        case "frp":
-          window.open("https://sites.google.com/view/frpofficialplay?usp=sharing", "_blank");
-          break;
-        case "inflection":
-          window.open("https://inflectionmagazine.com", "_blank");
-          break;
-        case "trophy":
-          window.open("https://github.com/Hunter-was/Trophy", "_blank");
-          break;
-        case "projectx":
-          window.open("https://www.twitch.tv/ze11an", "_blank");
-          break;
-        case "hand":
-          window.open("https://hunter-was.github.io/Hand2English/", "_blank");
-          break;
-        case "xactual":
-          window.open("https://docs.google.com/document/d/1l0hNv7l1nUGp8UdylOLy_44Nc-pY0AEvG5QQV7VJ4W8/edit?tab=t.0", "_blank");
           break;
         default:
           if (input) {
@@ -170,26 +134,17 @@
   <img src="RunKeyButton.png.png" alt="Run Key" class="run-key-image" onclick="runCipherPrompt()">
 
   <!-- Help text -->
-  <p class="help-text"  background-color="black">
+  <p class="help-text">
     If a prompt does not appear above, <a href="https://hunter-was.github.io/Redirect.help/" target="_blank">click here for help.</a>
   </p>
 
   <!-- Main content -->
-  <h1>Merry Christmas!</h1>
-  <p background-color="black">If you're not redirected, make sure JavaScript is enabled.</p>
-  <p background-color="black">- Hunter W.</p>
+  <p>If you're not redirected, make sure JavaScript is enabled.</p>
 
-  <!-- Bottom-left container holding all four clickable images -->
-  <div class="bottom-left-container">
-    <img src="Pigstepdisc.png" alt="Play Pigstep" onclick="playPigstep()">
-    <img src="Chirpdisc.png" alt="Play Chirp" onclick="playChirp()">
-    <img src="Mellohidisc.png" alt="Play Mellohi" onclick="playMellohi()">
-    <img src="Jukebox.png" alt="Mute All Sounds" onclick="muteAllSounds()">
-  </div>
-
-  <!-- Hidden audio elements -->
-  <audio id="pigstep-audio" src="4 - Pigstep (Mono Mix).mp3"></audio>
-  <audio id="chirp-audio" src="2-20. Chirp.mp3"></audio>
-  <audio id="mellohi-audio" src="2-22. Mellohi.mp3"></audio>
 </body>
 </html>
+
+#copy this and change
+        case "KEY":
+          window.open("LINK", "_blank");
+          break;
